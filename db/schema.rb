@@ -11,6 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140511064915) do
+
+  create_table "agents", force: true do |t|
+    t.string  "name"
+    t.string  "surname"
+    t.string  "patronymic"
+    t.string  "niсk"
+    t.integer "bmark"
+    t.string  "login"
+  end
+
+  create_table "firms", force: true do |t|
+    t.string   "name"
+    t.string   "urname"
+    t.string   "schet"
+    t.string   "orgform"
+    t.string   "bank"
+    t.integer  "inn"
+    t.string   "director"
+    t.string   "manager"
+    t.string   "brand"
+    t.string   "comment"
+    t.string   "contact_name"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "firms", ["name"], name: "index_firms_on_name"
+  add_index "firms", ["urname"], name: "index_firms_on_urname"
 
 end
